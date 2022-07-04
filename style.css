@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+.dark-mode{
+    background-color: #000;
+    color: white;
+}
+.light-mode{
+    background-color: white;
+    color: #000;
+}
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+.navigation ul{
+    position: relative;
+}
+.navigation ul li{
+    text-align: center;
+    list-style: none;
+}
+.navigation ul li a{
+    color: #333;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: 0.5s;
+}
+.navigation ul:hover li a{
+    color: #0002;
+}
+.navigation ul li:hover a{
+    color: #000;
+    
+}
+.navigation ul li a::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    font-size: 5em;
+    color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 450px;
+    transition: letter-spacing 0.5s,left 0.5s;
+}
+.navigation ul li a:hover:before{
+    content: attr(data-text);
+    opacity: 1;
+    letter-spacing: 10px;
+    left: 50%;
+    right: 50%;
+    width: 1800px;
+    height: 1800px;
+
+}
+.navigation ul li:nth-child(6n+1) a::before{
+    background: #427565;
+}
+.navigation ul li:nth-child(6n+2) a::before{
+    background: #4a9e83;
+}
+.navigation ul li:nth-child(6n+3) a::before{
+    background: #3a574e;
+}
+.navigation ul li:nth-child(6n+4) a::before{
+    background: #4a9e83;
+}
+.navigation ul li:nth-child(6n+5) a::before{
+    background: #3a574e;
+}
+.navigation ul li:nth-child(6n+6) a::before{
+    background: #ffeaa7;
+}
+.navigation ul li:nth-child(6n+1) a:hover:before{
+    background: #43f0f0;
+}
+.mouse{
+    width: 25px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    right: 50px;
+    margin-left: 110px;
+}
+.mouse-wheel{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+@keyframes move-wheel{
+    0%{
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(1rem);
+    }
+}
+.login-bg{
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(media/background.jpg);*/
+}
+.box{
+    width: 500px;
+   /*background: linear-gradient(to right top, rgba(55, 196, 214, 0.3),rgba(55,196,214,0.9));*/
+    padding: 40px;
+    position: absolute;
+    box-shadow: #333;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    /*border: 2px solid wheat;*/
+}
+.box h3{
+    font-family: Helvetica;
+    color: gray;
+    font-weight: 700;
+    font-size: 67px;
+}
+.box p{
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
+}
+.box input[type="email"],.box input[type="password"]{
+    border: none;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 4px solid #ffeaa7;
+    border-left: 0;
+    border-right: 0;
+    padding: 14px 10px;
+    border-top: 0;
+    width: 300px;
+    outline: none;
+    color: #ffeaa7;
+    font-size: 16px;
+    transition: 0.25s;
+}
+.box input[type="email"]:focus,.box input[type="password"]:focus{
+    width: 380px;
+    border-color: #246b6b;
+}
+.box input[type="button"]{
+    background: #246b6b;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid;
+    padding: 14px 40px;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.5s;
+    color: wheat;
+}
+.box input[type="button"]:hover{
+    background: #ffeaa7;
+    border: none;
+    color: #246b6b;
+    transform: translate(0,-6px);
+}
+.dark-btn,
+button.light-btn
+{
+    width: 60px;
+    height: 5;
+    outline: none;
+    background: #246b6b;
+    border-radius: 6px;
+    display: absolute;
+    transform: translate(-50%,-50%);
+    margin-left: 110px;
+    padding: 14px;
+}
